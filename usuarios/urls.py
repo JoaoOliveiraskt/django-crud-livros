@@ -1,11 +1,10 @@
 from django.urls import path
-from . import views 
+from .views import LoginView, CadastroView, ValidaCadastroView, ValidarLoginView, SairView
 
 urlpatterns = [
-    path('login/', views.login, name = 'login'),
-    path('cadastro/', views.cadastro, name = 'cadastro'),
-    path('validar_cadastro/', views.valida_cadastro, name = 'valida_cadastro'),
-    path('validar_login/', views.validar_login, name = 'validar_login'),
-    path('sair/', views.sair, name = 'sair')
-    
+    path('login/', LoginView.as_view(), name='login'),
+    path('cadastro/', CadastroView.as_view(), name='cadastro'),
+    path('validar_cadastro/', ValidaCadastroView.as_view(), name='valida_cadastro'),
+    path('validar_login/', ValidarLoginView.as_view(), name='validar_login'),
+    path('sair/', SairView.as_view(), name='sair'),
 ]
