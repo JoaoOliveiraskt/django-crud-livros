@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block 'conteudo' %}
+
+<div class="container">
+  <br>
+  {% if status_categoria == '1' %}
+    <div class="alert alert-success" role="alert">
+      Categoria cadastrada com sucesso
+    </div>
+  {% endif %}
+  <div class="row">
+    {% for livro in livros %}
+      <div class="col-md">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{livro.nome}}</h5>
+            <br>
+            <a href="{% url 'ver_livros' livro.id %}" class="btn btn-info">Acessar</a>
+          </div>
+        </div>
+        <br>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
