@@ -35,6 +35,16 @@
       <label>Co-autor:</label>
       <input style="width: 40%;" class="form-control" type="text" value="{{livro.co_autor}}" name="co_autor">
     </p>
+    <p>
+      <label>
+        Autor:
+      </label>
+      <input style="width: 40%;" class="form-control" type="text" value="{{livro.autor}}" name="autor">
+    </p>
+    <p>
+      <label>Descrição:</label>
+      <textarea class="form-control" name="descricao" type="text" value="{{livro.descricao}}">{{livro.descricao}}</textarea>
+    </p>
     <label>Categoria:</label>
     <select style="width: 20%;" class="form-control" name="categoria_id">
       {% for i in categoria_livro %}
